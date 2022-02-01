@@ -4,14 +4,11 @@ yuzu.sh will integrate into the Retropie Setup as an additional entry for instal
 This is to make sure that we do not interfere with the normal scriptmodules provided by Retropie.
 
 ### Requirements
-wget
-jq
-git
+wget, jq, git
 
 ### Install the script to Retropie-Setup
 
-1)
-Git clone this repository to *~/RetroPie-Setup/ext* folder inside retropie setup:
+1) Git clone this repository to *~/RetroPie-Setup/ext* folder inside retropie setup:
  
 ```
 git clone https://github.com/parasven/retropie_yuzu.git ~/RetroPie-Setup/ext/retropie_yuzu
