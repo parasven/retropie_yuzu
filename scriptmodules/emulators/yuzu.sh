@@ -18,7 +18,7 @@ rp_module_flags="!arm"
 
 function install_bin_yuzu() {
     mkdir -p "$md_inst/bin"
-    sh ~/scripts/autoyuzu.sh -O "$md_inst/bin/yuzu.AppImage"
+    wget --content-disposition  $(curl -q -s https://api.github.com/repos/yuzu-emu/yuzu-mainline/releases/latest | jq -r '.["assets"][]|select(.name | endswith(".AppImage"))["browser_download_url"]') -O "$md_inst/bin/yuzu.AppImage"
     chmod +x "$md_inst/bin/yuzu.AppImage"
 }
 

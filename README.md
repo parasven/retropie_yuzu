@@ -1,45 +1,29 @@
 # Yuzu (Unofficial) Install Script(s) for Linux RetroPie
 
-This will make directories for Yuzu, download the latest (LINUX) version, rename it to Yuzu.AppImage, move it to the /opt/retropie/emulators/bin folder and then configure it for use with RetroPie/Emulationstation.
+yuzu.sh will integrate into the Retropie Setup as an additional entry for installation. The official way to integrate external emulators and scripts got to the following folder: *~/RetroPie-Setup/ext*
+This is to make sure that we do not interfere with the normal scriptmodules provided by Retropie.
 
-***NOTE***
-This would technically work with the Raspberry Pi version of RetroPie, but there is almost no point to that considering the low power of a Raspi and the necessary processing power needed by Yuzu. The main purpose for this script is to be used with a full PC that is running the RPie software.
+### Requirements
+wget
+jq
+git
 
-## Prerequisites
-Please first download & install Retropie on your Debian/Ubuntu device https://retropie.org.uk/docs/Debian/
+### Install the script to Retropie-Setup
 
-***THEME***
-For theme data, make sure you use The following Pixel theme instead of the Default EmulationStation Pixel theme (just replace the theme folder in ```/etc/emulationstation/themes/pixel``` with the one you downloaded
-https://drive.google.com/drive/folders/1Z6WVm87CJh4GUo4T18UdSVfujdlyuAjU?usp=sharing
-
-Theme Credit: https://www.reddit.com/r/emulation/comments/8tlyty/ive_updated_emulationstations_pixel_theme_by/
-
-### Initial (First time ONLY) Script Configuration
-
-***These steps should only be performed if this is your first time using this script. If you have followed this guide before and you use this script, please instead just run the RetroPie-Setup and update the package via `Packages > EXP > Yuzu`***
-
-***Do not use `sudo`*** for any of the below commands ***unless specifically advised to***, Root should not own or control Yuzu
-
-1) Open a terminal and run:
+1)
+Git clone this repository to *~/RetroPie-Setup/ext* folder inside retropie setup:
+ 
 ```
-mkdir scripts
-cd /opt/retropie/emulators
-mkdir yuzu/
-```
-2) Once finished, place "autoyuzu.sh" inside the `~/scripts` folder, and ensure it is executable
-
-```
-chmod +x ~/scripts/autoyuzu.sh
+git clone https://github.com/parasven/retropie_yuzu.git ~/RetroPie-Setup/ext/retropie_yuzu
 ```
 
-3) Next, edit `~/RetroPie-Setup/platforms.cfg` and add:
+2) Next, edit `~/RetroPie-Setup/platforms.cfg` and add:
 
 ```
 switch_exts=".NSI .XCI"
 switch_fullname="Nintendo Switch"
 ```
 
-4) Lastly, place the "yuzu.sh" file into `~/RetroPie-Setup/scriptmodules/emulators/`
 
 ### Using the Script
 
